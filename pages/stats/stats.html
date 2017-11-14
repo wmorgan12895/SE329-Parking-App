@@ -10,5 +10,9 @@
 </ion-header>
  
 <ion-content>
+  <ion-list>
+    <ion-item>Today's Matches: {{this.matches.length}}</ion-item>
+    <ion-item>Top Interest: {{this.mostMatched.interest}} with {{this.mostMatched.val}} matches</ion-item>
+  </ion-list>
   <div #map id="map"></div>  
 </ion-content>

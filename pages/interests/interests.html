@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Interests</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let interest of interests; let i = index">
+    <ion-item>
+      <ion-input type="text" [value]="interests[i].interest" placeholder="Interest" readonly></ion-input>
+      <h2 item-right>{{interests[i].category}}</h2>
+    </ion-item>
+    <ion-item-options>
+      <button ion-button large color="danger" (click)="delete(i)"><ion-icon name="trash"></ion-icon></button>
+    </ion-item-options>
+    </ion-item-sliding>
+   
+
+    <ion-item>
+      <ion-input type="text" [value]="newInterest" (input)="newInterest = $event.target.value" placeholder="New Interest"></ion-input>
+      <ion-select [(ngModel)]="newCat" placeholder="Category">
+        <ion-option *ngFor="let category of categories">
+          {{category}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+    <ion-item>
+      <button ion-button full (click) = 'addInterest()'>Add Interest</button>
+    </ion-item>
+    <ion-item>
+      <button ion-button full (click) = 'continue()'>Continue</button>
+      <h2 color="danger">Please enter at least 5 interests before continuing</h2>
+    </ion-item>
+
+</ion-content>

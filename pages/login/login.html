@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar hideBackButton = true>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+  <!-- peter's -->
+  <ion-item>
+    <ion-input type="text" [value]="username" (input)="username = $event.target.value" placeholder="Username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="password" [value]="password" (input)="password = $event.target.value" placeholder="Password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <!--login() is called when button is clicked-->
+    <button ion-button (click) = 'login()'>Login</button>
+
+    <button ion-button (click) = 'register()'>Register</button>
+  </ion-item>
+
+
+</ion-list>
+</ion-content>

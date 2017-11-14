@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar hideBackButton = true>
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-list-header>
+      <ion-card-title>
+        Account
+      </ion-card-title>
+      <button color="light" ion-item detail-none text-left (click)="this.changePassword()">
+        Change Password
+      </button>
+      <button color="light" ion-item detail-none text-left (click)="this.logOut()">
+        Log Out
+      </button>
+    </ion-list-header>
+  </ion-card>
+</ion-content>

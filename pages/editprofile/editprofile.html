@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-list-header>
+        <ion-img [width]="60" height="80" src={{this.picture}} item-left>
+        </ion-img>
+        Change Profile Picture
+      </ion-list-header>
+      <button ion-button (click) = 'takePicture(1)'>Camera</button>
+      <button ion-button (click) = 'takePicture(2)'>Storage</button>
+    </ion-item>
+
+  <ion-item>
+    <ion-input type="text" [value]="fname" (input)="fname = $event.target.value" placeholder="Change First Name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" [value]="lname" (input)="lname = $event.target.value" placeholder="Change Last Name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <!--next() is called when button is clicked-->
+    <button ion-button (click) = 'next()'>Save</button>
+  </ion-item>
+
+
+</ion-list>
+</ion-content>

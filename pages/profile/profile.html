@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar hideBackButton = true>
+    <ion-title>
+      My Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-list-header>
+      <ion-img [width]="60" height="80" src={{this.picture}} item-left>
+      </ion-img>
+      <ion-card-title>
+      {{this.fname}} {{this.lname}}
+      </ion-card-title>
+    </ion-list-header>
+  <ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left (click) = 'editProf()'>
+        <ion-icon name="cog"></ion-icon>
+        Edit Profile
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left (click) = 'editInt()'>
+        <ion-icon name="cog"></ion-icon>
+        Edit Interests
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Username:
+      </ion-col>
+      <ion-col>
+        {{this.username}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Priority interest:
+      </ion-col>
+      <ion-col>
+        {{this.priorityInterest}}
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+  </ion-card>
+  <ion-card>
+  <ion-card-content>
+    <ion-row>
+      <ion-col>
+        <ion-card-title>
+          Interests
+        </ion-card-title>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-item *ngFor="let ints of this.interests">
+    <ion-row>
+      <ion-col>
+        <p>{{ints.interest}}</p>
+      </ion-col>
+      <ion-col>
+        <p>{{ints.category}}</p>
+      </ion-col>
+      </ion-row>
+    </ion-item>
+
+  </ion-card-content>
+  </ion-card>
+</ion-content>

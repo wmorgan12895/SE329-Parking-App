@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar hideBackButton = true>
+    <ion-title>Matches</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="this.refreshMatches($event)">
+  <ion-refresher-content>
+  </ion-refresher-content>
+  </ion-refresher>
+
+    <ion-list>
+        <ion-list-header>
+          Pull down to refresh
+        </ion-list-header>
+
+        <ion-item *ngFor="let match of this.matches">
+          <ion-img width="60" height="80" src= {{match.profilePicture}} item-left>
+          </ion-img>
+          <h2>{{match.fname}}</h2>
+          <p>{{match.distance}} feet away</p>
+          <p>Priority Interest: {{match.priorityInterest}}</p>
+          <p><i>Common topics:</i></p>
+          <p *ngFor="let interest of match.commonInterests">{{interest}}</p>
+          <button ion-button clear item-right (click)="this.seeMatch(match)">View</button>
+        </ion-item>
+
+
+
+        <!--
+
+        <button color="light" ion-item detail-none text-center (click)="this.getMatches()">
+          Get Matches
+        </button>
+
+
+
+        <ion-list-header>
+          Information
+        </ion-list-header>
+        <ion-item>
+            Latitude: {{this.lat}}
+        </ion-item>
+        <ion-item>
+            Longitude: {{this.long}}
+        </ion-item>
+        <ion-item>
+            Altitude: {{this.alt}}
+        </ion-item>
+
+
+        <button color="light" ion-item detail-none text-center (click)="this.getPosition()">
+          Refresh Location
+        </button>
+
+        -->
+
+      </ion-list>
+
+</ion-content>
