@@ -8,14 +8,14 @@
 
     <ion-list>
         <ion-list-header>
-          Closest lots
+          Closest Lots (Current Location: {{lat}}, {{long}})
         </ion-list-header>
 
         <ion-item *ngFor="let lot of this.lots">
           <h2>Lot Name: {{lot.LotName}}</h2>
-          <p>Parking Hours: {{lot.ParkingTimes}}</p>
-          <p>Lat: {{lot.lat}}</p>
-          <p>Lon: {{lot.lon}}</p>
+          <p>Permit Required Hours: {{lot.ParkingTimes}}</p>
+          <p>Is Open: {{lot.isOpen}}</p>
+          <p>Distance: {{lot.distance}}</p>
         </ion-item>
       </ion-list>
 

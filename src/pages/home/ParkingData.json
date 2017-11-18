@@ -1,21 +1,7 @@
 {
     "lots": [
-        {"LotName": "A", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A1", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A2", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A3", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A4", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A5", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A6", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A7", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A8", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "9A", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A0", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "21", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "31", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A32", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A43", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "A23", "lat":10, "lon":10, "ParkingTimes":"5-300"},
-        {"LotName": "b", "lat":10, "lon":9, "ParkingTimes":"5-800"}
+        {"LotName": "A", "lat":41.322408, "lon":-95.872598, "UnavailableStart":"8:00", "UnavailableStop":"11:30"},
+        {"LotName": "A1", "lat":41.322708, "lon":-95.87959810, "UnavailableStart":"8:00", "UnavailableStop":"17:30"},
+        {"LotName": "A2", "lat":41.325408, "lon":-95.772598, "UnavailableStart":"X", "UnavailableStop":"X"}
     ]
 }
