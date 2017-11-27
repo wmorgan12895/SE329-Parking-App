@@ -1,7 +1,0 @@
-{
-    "lots": [
-        {"LotName": "A", "lat":41.322408, "lon":-95.872598, "UnavailableStart":"8:00", "UnavailableStop":"11:30"},
-        {"LotName": "A1", "lat":41.322708, "lon":-95.87959810, "UnavailableStart":"8:00", "UnavailableStop":"17:30"},
-        {"LotName": "A2", "lat":41.325408, "lon":-95.772598, "UnavailableStart":"X", "UnavailableStop":"X"}
-    ]
-}

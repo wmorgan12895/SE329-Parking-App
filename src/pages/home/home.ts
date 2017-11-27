@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Geolocation } from 'ionic-native';
-import * as data from './ParkingData.json';
+import { ViewLotPage } from '../viewlot/viewlot';
+import * as data from '../ParkingData.json';
 
 @Component({
   selector: 'page-home',
@@ -13,39 +14,42 @@ export class HomePage {
  lots: any[];
  lat: number;
  long: number;
+ CanIPark: string;
 
-
-  classes: any = {
-    'red': false,
-    'green': true
-  };
 
 
   constructor(public navCtrl: NavController) {
     var dataLots = (<any>data).lots
     this.lots = [];
+    this.CanIPark = "No";
     this.orderLots(dataLots);
   }
 
+  canIPark(element){
+      if(this.distance(this.lat, this.long, element.lat, element.lon,"F") < 100) {
+        this.CanIPark = "Yes";
+      }
+  }
 
   orderLots(lots){
     Geolocation.getCurrentPosition().then((resp) => {
       this.lat = resp.coords.latitude;
       this.long = resp.coords.longitude;
       lots.forEach(element => {
-        console.log(element.LotName);
-        var distance = this.distance(this.lat, this.long, element.lat, element.lon,"F");
+        var distance = this.distance(this.lat, this.long, element.lat, element.lon,"M");
         var isOpen =  this.isOpen(element);
         var ParkingTimes = this.displayHours(element);
         var lot = {
           LotName: element.LotName,
           ParkingTimes: ParkingTimes,
           distance: distance,
-          isOpen: isOpen
+          isOpen: isOpen,
+          lat: element.lat,
+          lon: element.lon
         }
+        this.canIPark(element)
         this.insertLot(lot);
       }); 
-      console.log(this.lots);
     }).catch((error) => {
       console.log('Error getting location', error);
     });
@@ -78,6 +82,7 @@ export class HomePage {
     dist = dist * 60 * 1.1515
     if (unit=="K") { dist = dist * 1.609344 }
     if (unit=="N") { dist = dist * 0.8684 }
+    if (unit=="F") { dist = dist * 5280}
     return dist;
   }
 
@@ -85,7 +90,7 @@ export class HomePage {
     if(lot.UnavailableStart == "X"){
       return "All Hours All Days";
     }
-    return ""+ lot.UnavailableStart + "-" + lot.UnavailableStop
+    return "M-F: "+ lot.UnavailableStart + "-" + lot.UnavailableStop
   }
 
   isOpen(lot){
@@ -118,6 +123,12 @@ export class HomePage {
 
     return false
 
+  }
+
+  seeLot(lot){
+    this.navCtrl.push(ViewLotPage, {
+      lot: lot
+    });
   }
 
 }

@@ -1,20 +1,21 @@
 import { Component, ViewChild, ElementRef} from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from 'ionic-native';
-import * as data from '../ParkingData.json';
 
 declare var google;
 
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-viewlot',
+  templateUrl: 'viewlot.html'
 })
-export class AboutPage {
+export class ViewLotPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
+  lot: any;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,) {
+    this.lot = navParams.get('lot');
     this.loadMap();
   }
 
@@ -22,8 +23,6 @@ export class AboutPage {
   loadMap(){
 
     Geolocation.getCurrentPosition().then((position) => {
-      console.log(position.coords.latitude);
-      console.log(position.coords.longitude);
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
  
       let mapOptions = {
@@ -34,7 +33,7 @@ export class AboutPage {
  
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
       this.addMarkerHere();
-      this.addMarkerLots((<any>data).lots);
+      this.addMarkerLot(this.lot);
     }, (err) => {
       console.log(err);
     });
@@ -55,18 +54,15 @@ export class AboutPage {
     
    }
 
-   addMarkerLots(lots){
-    lots.forEach(element => {
+   addMarkerLot(lot){
         let marker = new google.maps.Marker({
           map: this.map,
           animation: google.maps.Animation.DROP,
-          position: new google.maps.LatLng(element.lat, element.lon)
+          position: new google.maps.LatLng(lot.lat, lot.lon)
         }); 
       
-        let content = "<h4>Lot Name: "+element.LotName+"</h4></br><p>Unavailable Hours: " + this.displayHours(element) + "</p>";         
-        console.log(content);
+        let content = "<h4>Lot Name: "+lot.LotName+"</h4></br><p>" + lot.ParkingTimes + "</p>";         
         this.addInfoWindow(marker, content);
-    });
    }
 
    addInfoWindow(marker, content){

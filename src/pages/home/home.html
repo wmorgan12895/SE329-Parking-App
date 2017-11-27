@@ -5,18 +5,27 @@
 </ion-header>
 
 <ion-content>
-
-    <ion-list>
-        <ion-list-header>
-          Closest Lots (Current Location: {{lat}}, {{long}})
-        </ion-list-header>
-
-        <ion-item *ngFor="let lot of this.lots">
-          <h2>Lot Name: {{lot.LotName}}</h2>
-          <p>Permit Required Hours: {{lot.ParkingTimes}}</p>
-          <p>Is Open: {{lot.isOpen}}</p>
-          <p>Distance: {{lot.distance}}</p>
-        </ion-item>
-      </ion-list>
+    <ion-card>
+      <ion-card-header>
+          Can I Park where I'm at? (Current Location: {{lat}}, {{long}})
+      </ion-card-header>
+      <ion-card-content>
+          {{this.CanIPark}}
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>Closest Lots</ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let lot of this.lots">
+            <h2>Lot Name: {{lot.LotName}}</h2>
+            <p>Permit Required Hours: {{lot.ParkingTimes}}</p>
+            <p>Is Open: {{lot.isOpen}}</p>
+            <p>Distance: {{lot.distance}}</p>
+            <button ion-button clear item-right (click)="this.seeLot(lot)">View</button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
 
 </ion-content>
