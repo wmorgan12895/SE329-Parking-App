@@ -45,6 +45,7 @@ export class ViewLotPage {
      let marker = new google.maps.Marker({
        map: this.map,
        animation: google.maps.Animation.DROP,
+       icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
        position: this.map.getCenter()
      });
     
