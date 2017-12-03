@@ -34,9 +34,25 @@
         {"LotName": "22", "lat":42.0301, "lon":-93.6508, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
         {"LotName": "23", "lat":42.0296, "lon":-93.6502, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
         {"LotName": "25", "lat":42.0297, "lon":-93.6492, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
-        {"LotName": "27", "lat":42.0315, "lon":-93.6506, "UnavailableStart":"7:00", "UnavailableStop":"17:30"}
-        
-
+        {"LotName": "27", "lat":42.0315, "lon":-93.6506, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "18", "lat":42.02823, "lon":-93.6480, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "19", "lat":42.0252, "lon":-93.6478, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "26", "lat":42.0299, "lon":-93.6478, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "30", "lat":42.0317, "lon":-93.6475, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "31", "lat":42.0323, "lon":-93.6467, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "32", "lat":42.0308, "lon":-93.6471, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "33", "lat":42.0315, "lon":-93.6464, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "35", "lat":42.0318, "lon":-93.6454, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "36", "lat":42.0298, "lon":-93.6467, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "37", "lat":42.0299, "lon":-93.6459, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "38", "lat":42.0299, "lon":-93.6446, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "39", "lat":42.0299, "lon":-93.6424, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "40", "lat":42.0294, "lon":-93.6428, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "43", "lat":42.0285, "lon":-93.6451, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "45", "lat":42.0278, "lon":-93.6421, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "49", "lat":42.0259, "lon":-93.6441, "UnavailableStart":"X", "UnavailableStop":"X"},
+        {"LotName": "79", "lat":42.0308, "lon":-93.6418, "UnavailableStart":"7:00", "UnavailableStop":"17:30"},
+        {"LotName": "83", "lat":42.0237, "lon":-93.6420, "UnavailableStart":"X", "UnavailableStop":"X"}        
 
     ]
 }
